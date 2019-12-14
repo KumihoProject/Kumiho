@@ -8,6 +8,7 @@ module.exports = (env) => ({
         path: path.join(__dirname, '/public'),
         filename: 'bundle.js'
     },
+    devtool: "source-map",
     module: {
         rules: [
             {

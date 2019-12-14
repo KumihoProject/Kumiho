@@ -1,9 +1,9 @@
 import express from 'express';
+import caver from './caver';
 
 const app = express();
 
 let port = 3000;
-
 
 // 경로 '/' 로 들어오는 요청들은 public 폴더로 정적 라우팅합니다.
 app.use('/', express.static(__dirname + '/../public'));
