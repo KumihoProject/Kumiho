@@ -1,0 +1,38 @@
+{
+  "name": "exit-plan",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rm -rf build public/bundle.js",
+    "build": "babel server --out-dir build && ./node_modules/.bin/webpack",
+    "build:dev": "babel server --out-dir build && ./node_modules/.bin/webpack --env.sandbox --watch",
+    "start": "NODE_ENV=production node ./build/main.js",
+    "development": "NODE_ENV=development node ./build/main.js",
+    "build:watch": "npm-run-all -p watch:server watch:react ",
+    "watch:server": "babel server --out-dir build --watch",
+    "watch:react": "./node_modules/.bin/webpack --env.sandbox --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.7.5",
+    "@babel/core": "^7.7.5",
+    "@babel/preset-env": "^7.7.6",
+    "@babel/preset-es2015": "^7.0.0-beta.53",
+    "@babel/preset-react": "^7.7.4",
+    "babel-loader": "^8.0.6",
+    "html-webpack-plugin": "^3.2.0",
+    "npm-run-all": "^4.1.5",
+    "react-hot-loader": "^4.12.18",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.9.0"
+  }
+}
