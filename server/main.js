@@ -1,20 +1,31 @@
+import "@babel/polyfill";
 import express from 'express';
-import caver from './caver';
+import bodyParser from 'body-parser';
+import {uploadCode} from './util/functools';
 
 const app = express();
 
 let port = 3000;
 
-// 경로 '/' 로 들어오는 요청들은 public 폴더로 정적 라우팅합니다.
+app.use(bodyParser.urlencoded())
 app.use('/', express.static(__dirname + '/../public'));
 
 app.get('/hello', (req, res) => {
     return res.send('Can you hear me?');
 });
 
+app.post('/upload', async (req, res) => {
+    const {title, domain, code} = req.body;
+    const result = await uploadCode(title, code);
+    console.log(result);
+    return res.redirect('/');
+})
+
 // 라우트 예제입니다.
-import posts from './routes/posts';
-app.use('/posts', posts);
+import route from './routes/route';
+import { splitCode } from './util/functools';
+app.use('/route', route);
+
 
 
 const server = app.listen(port, () => {
