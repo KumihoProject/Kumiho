@@ -1,29 +1,16 @@
 import {split} from 'lodash/string';
 import {reverse} from 'lodash/array';
+import lodashString from 'lodash/string';
 import solc from 'solc';
 import caver from '../caver';
+import fs from 'fs';
 
 export function splitCode (code, length = 50) {
     return code.match(new RegExp('.{1,' + length + '}', 'g'));
 }
 
 export function getFragSolidity () {
-    const solidityCode = `
-        pragma solidity >=0.4.25 <0.6.0;
-
-        contract CodeFrag {
-            address prevContract;
-            string codeFrag;
-            constructor (address _prevContract, string memory _codeFrag) public {
-                prevContract = _prevContract;
-                codeFrag = _codeFrag;
-            }
-        
-            function getCodeFragment () public view returns(address, string memory) {
-                return (prevContract, codeFrag);
-            }
-        }
-    `
+    const solidityCode = fs.readFileSync('contract/CodeFrag.sol').toString();
 
     const solidityTemplate = {
         language: 'Solidity',
@@ -44,8 +31,8 @@ export function getFragSolidity () {
 }
 
 export async function uploadCode (title, code) {
-    const codeFragList = splitCode(code, 5);
-    const fragSolidity = getFragSolidity();
+    const codeFragList = splitCode(code);
+    const fragSolidity = await getFragSolidity();
     const abi = fragSolidity.contracts[`CodeFrag.sol`][`CodeFrag`].abi
     const bin = '0x' + fragSolidity.contracts[`CodeFrag.sol`][`CodeFrag`].evm.bytecode.object;
 

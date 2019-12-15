@@ -1,7 +1,7 @@
 import express from 'express';
-import ROUTE_TABLE from '../routTable';
 import caver from '../caver';
 import { getFragSolidity } from '../util/functools';
+import fs from 'fs';
 
 const router = express.Router();
 
@@ -11,6 +11,8 @@ router.get('/', (req,res) => {
 
 router.get('/:path', async (req, res) => {
     const path = req.params.path;
+
+    const ROUTE_TABLE = JSON.parse(fs.readFileSync('server/routeTable.json').toString());
     const contractAddress = ROUTE_TABLE[path];
 
     const fragSolidity = getFragSolidity();
