@@ -1,0 +1,10 @@
+{
+    "name": "exit-plan",
+    "version": "0.0.1",
+    "description": "Chrome extension for exit-plan",
+    "manifest_version": 2,
+    "background": {
+        "scripts": ["proxySetting.js"]
+    },
+    "permissions": ["proxy", "webRequest", "webRequestBlocking", "*://*.klay/"]
+}
