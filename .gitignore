@@ -1,6 +1,7 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 public
 build
+webloader_public
 
 # dependencies
 /node_modules

@@ -3,11 +3,20 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import {uploadCode} from './util/functools';
 import fs from 'fs';
+import path from 'path';
 
 const app = express();
 
 let port = 3000;
 
+app.use((req, res, next) => {
+    if (req.host.substring(req.host.length-5, req.host.length) === '.klay') {
+        res.sendFile(path.join(__dirname + '/../webloader_public/index.html'));
+    }
+    else {
+        next();
+    }
+})
 app.use(bodyParser.urlencoded())
 app.use('/', express.static(__dirname + '/../public'));
 
