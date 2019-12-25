@@ -4,7 +4,17 @@
     "description": "Chrome extension for exit-plan",
     "manifest_version": 2,
     "background": {
-        "scripts": ["proxySetting.js"]
+        "scripts": [
+            "initializeOptions.js",
+            "proxySetting.js"
+        ]
     },
-    "permissions": ["proxy", "webRequest", "webRequestBlocking", "*://*.klay/"]
+    "permissions": [
+        "proxy",
+        "webRequest",
+        "webRequestBlocking",
+        "*://*.klay/",
+        "storage"
+    ],
+    "options_page": "options.html"
 }
