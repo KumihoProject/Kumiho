@@ -1,5 +1,3 @@
-import React from 'react';
-
 class CodeUploader extends React.Component {
     render () {
         return <div>
@@ -19,7 +17,7 @@ class CodeUploader extends React.Component {
                     </textarea>
                 </div>
                 <div>
-                    <button type="submit">submit</button>
+                    <button type="submit" className={'btn btn-primary'}>submit</button>
                 </div>
             </form>
         </div>

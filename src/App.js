@@ -1,4 +1,3 @@
-import React from 'react';
 import CodeUploader from './components/CodeUploader';
 
 export default class App extends React.Component {
