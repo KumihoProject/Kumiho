@@ -3,18 +3,25 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to kumiho's documentation!
-==================================
+=================================
+Kumiho - Decentralized Web Application
+=================================
+
+Kumiho is Decentralized Web Application
+
+Contents:
+
+:ref:`Keyword Index <genindex>`, :ref:`Search Page <search>`
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :caption: User Documentation:
 
+   Foxfire
+   Ninetales
 
+.. toctree::
+    :maxdepth: 2
+    :caption: API Reference
 
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+    Ahri

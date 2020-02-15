@@ -43,6 +43,7 @@ templates_path = ['_templates']
 language = 'ko'
 master_doc = 'index'
 
+autosectionlabel_prefix_document = True
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
