@@ -3,7 +3,7 @@
 Ahri
 ====
 
-``Ahri``는 Kumiho 플랫폼을 사용하기 위한 SDK입니다. 
+``Ahri`` 는 Kumiho 플랫폼을 사용하기 위한 SDK입니다. 
 
 .. code-block:: javascript
 
