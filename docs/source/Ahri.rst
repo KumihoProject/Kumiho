@@ -71,6 +71,17 @@ Parameters
 3. ``args`` - ``Array``: Contract에 넘겨 줄 arguments
 4. ``value`` - ``int``: 지불할 비용(Peb). ``method`` 가 ``GET`` 일때는 무시됩니다.
 
+----------
+Returns
+----------
+
+1. ``Object`` - Contract가 리턴한 값
+
+.. code-block:: javascript
+    const result = Ahri.callByUrl('demo.klay/get', 'GET', []);
+    console.log(result)
+    
+    //{0: "1", 1: "demo", __length__: 2}
 
 ------------------------------------------------------------------------------
 
