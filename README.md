@@ -13,7 +13,7 @@ kumiho project
   run local docs server
   ```bash
   cd docs/build/html
-  noup python3 -m http.server 8081 &
+  nohup python3 -m http.server 8081 &
   ```
   http://kumiho.org:8081
 
