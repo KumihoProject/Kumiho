@@ -59,6 +59,18 @@ callByUrl
 .. code-block:: javascript
 
     async callByUrl(url, method, args, value = 0, options = {})
+    
+``callByUrl`` 은 해당 url을 가진 Smart Contract를 호출하는 함수입니다.
+
+----------
+Parameters
+----------
+
+1. ``url`` - ``String``: 타겟 Contract와 매핑된 Url
+2. ``method`` - ``'GET'|'POST'``: Target을 호출할 method. pure, view 함수일 경우 'GET'을, 일반적인 함수나 payable일 경우 'POST'를 사용 합니다.
+3. ``args`` - ``Array``: Contract에 넘겨 줄 arguments
+4. ``value`` - ``int``: 지불할 비용(Peb)
+
 
 ------------------------------------------------------------------------------
 
