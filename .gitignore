@@ -120,6 +120,7 @@ env.bak/
 venv.bak/
 pip-selfcheck.json
 
+nohup.out
 ### VisualStudioCode ###
 .vscode/
 .vscode/*
