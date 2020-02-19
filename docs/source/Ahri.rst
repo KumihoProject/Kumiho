@@ -106,7 +106,7 @@ callByAddress
     console.log(result);
     //{0: "1", __length__: 1}
     
-    await Ahri.callByAddress('0x56f8eF1d4986460df8783d2A2147C1069203F848', 'POST', 'setValue', [13], ['uint256'], []);
+    await Ahri.callByAddress('0x56f8eF1d4986460df8783d2A2147C1069203F848', 'POST', 'setValue', [3], ['uint256'], []);
     
     result = await Ahri.callByAddress('0x56f8eF1d4986460df8783d2A2147C1069203F848', 'GET', 'getValue', [], [], ['uint256']);
     console.log(result);
@@ -121,6 +121,21 @@ fetch
 
     async fetch(url, req = {})
 
+HTTP Header의 ``Klay-Address`` 에 지갑의 주소를 설정하여 fetch 요청을 보냅니다.
+
+.. code-block:: javascript
+
+    async fetch(url, req = {}) {
+        const response = await fetch(url, {
+            ...req,
+            headers: {
+                ...(req.headers || {}),
+                'Klay-Address': caver.klay.accounts.wallet.getAccount(0).address,
+            }
+        });
+        return response;
+    }
+    
 ------------------------------------------------------------------------------
 
 
@@ -129,3 +144,21 @@ getApiInterface
 .. code-block:: javascript
 
     async getApiInterface(url)
+    
+해당 Url의 Smart Contract의 Interface를 가져옵니다.
+
+
+.. code-block:: javascript
+
+    const interface = await Ahri.getApiInterface('demo.klay/get');
+    console.log(interface);
+    
+    //{
+    //    "address": "0x56f8eF1d4986460df8783d2A2147C1069203F848",
+    //    "functionName": "getValue",
+    //    "parameters": [],
+    //    "result": [
+    //        "uint256"
+    //    ]
+    //}
+ 
