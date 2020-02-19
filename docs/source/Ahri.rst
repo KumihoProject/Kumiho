@@ -60,7 +60,7 @@ callByUrl
 
     async callByUrl(url, method, args, value = 0, options = {})
     
-``callByUrl`` 은 해당 url을 가진 Smart Contract를 호출하는 함수입니다.
+``callByUrl`` 은 해당 url을 가진 Smart Contract를 호출하는 함수입니다. ``POST`` 일 경우 리턴값은 없습니다.
 
 ----------
 Parameters
@@ -79,10 +79,15 @@ Returns
 
 .. code-block:: javascript
 
-    const result = Ahri.callByUrl('demo.klay/get', 'GET', []);
-    console.log(result)
+    let result = await Ahri.callByUrl('demo.klay/get', 'GET', []);
+    console.log(result);
+    //{0: "1", __length__: 1}
     
-    //{0: "1", 1: "demo", __length__: 2}
+    await Ahri.callByUrl('demo.klay/set', 'POST', [3]);
+    
+    result = await Ahri.callByUrl('demo.klay/get', 'GET', []);
+    console.log(result);
+    //{0: "3", __length__: 1}
 
 ------------------------------------------------------------------------------
 
@@ -92,6 +97,20 @@ callByAddress
 .. code-block:: javascript
 
     async callByAddress(address, method, functionName, args, argTypes, resultTypes, value = 0, options = {})
+
+``callByAddress`` 은 해당 address를 가진 Smart Contract를 호출하는 함수입니다. ``POST`` 일 경우 리턴값은 없습니다.
+
+.. code-block:: javascript
+
+    let result = await Ahri.callByAddress('0x56f8eF1d4986460df8783d2A2147C1069203F848', 'GET', 'getValue', [], [], ['uint256']);
+    console.log(result);
+    //{0: "1", __length__: 1}
+    
+    await Ahri.callByAddress('0x56f8eF1d4986460df8783d2A2147C1069203F848', 'POST', 'setValue', [13], ['uint256'], []);
+    
+    result = await Ahri.callByAddress('0x56f8eF1d4986460df8783d2A2147C1069203F848', 'GET', 'getValue', [], [], ['uint256']);
+    console.log(result);
+    //{0: "3", __length__: 1}
 
 ------------------------------------------------------------------------------
 
