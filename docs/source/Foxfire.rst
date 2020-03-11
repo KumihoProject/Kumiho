@@ -1,5 +1,8 @@
 
 ====
+.. index:: ! Foxfire
+
+.. _Foxfire:
 Foxfire
 ====
 

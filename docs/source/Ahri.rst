@@ -1,5 +1,8 @@
 
 ====
+.. index:: ! Ahri
+
+.. _Ahri:
 Ahri
 ====
 

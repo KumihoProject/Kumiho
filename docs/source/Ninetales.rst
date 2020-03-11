@@ -1,5 +1,8 @@
 
 ========
+.. index:: ! Ninetales
+
+.. _Ninetales:
 Ninetales
 ========
 
