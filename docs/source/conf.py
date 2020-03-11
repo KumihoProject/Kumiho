@@ -17,9 +17,9 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'kumiho'
-copyright = '2020, salphaon'
-author = 'salphaon'
+project = 'Kumiho'
+copyright = '2020, Kumiho'
+author = 'Kumiho team'
 
 # The full version, including alpha/beta/rc tags
 release = '0.0.1'
