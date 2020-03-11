@@ -71,6 +71,10 @@ HTML코드는 Reversed Linked List 형태로 Klaytn Blockchain 위에 업로드 
     
         <script src="http://kumiho.klay/script.js">
         <style href="http://kumiho.klay/style.css">
+
+    .. code-block:: javascript
+    
+        fetch('http://kumiho.klay/');
     
     그러므로 web application을 작성할때 Webpack과 같은 도구로 하나의 페이지로 bundling해야 하며 용량이 커지는 것을 막기위해 라이브러리나 이미지들은 CDN을 사용하는 것을 추천합니다.
 
