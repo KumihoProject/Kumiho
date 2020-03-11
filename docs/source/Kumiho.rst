@@ -12,6 +12,9 @@ Kumiho는 Chrome, Firefox를 지원하며 Browser Extension을 설치하면 사�
 .. _Chrome: https://chrome.google.com/webstore/category/extensions
 .. _Firefox: https://addons.mozilla.org/ko/firefox/extensions/
 
+.. note::
+    Kumiho는 :ref:`Foxfire<Foxfire>` Extension과 Kaikas 지갑이 설치되어있어야 동작합니다.
+
 새로운 웹 애플리케이션을 배포하고 싶다면 http://kumiho.klay/enroll_domain 에서 도메인을 등록 후 가능합니다.
 
 ------------------------------------------------------------------------------
@@ -32,7 +35,7 @@ Web Page
 
 단순히 HTML코드를 블럭체인상에 업로드하는 것 만으로는 일반적인 방법으로는 접근이 불가능하기에 우리는 블록체인상의 HTML코드를 로드할 수 있는 Browser Extension인 :ref:`Foxfire<Foxfire>` 를 제공합니다.
 
-HTML코드는 Reversed Linked List 형태로 Klaytn Blockchain 위에 업로드 됩니다. Foxfire가 설치된 사용자가 .klay 도메인에 접속하면 Kumiho의 백엔드인 :ref:`Ninetales<Ninetales>` 에서 웹 페이지를 블록체인 상에서 로드할 Webloader를 받아옵니다. Webloader는 현재 접속한 domain을 보고 로드해야 할 HTML을 담고있는 smart contract의 시작 주소를 Ninetales로 부터 받아옵니다.
+HTML코드는 Reversed Linked List 형태로 Klaytn Blockchain 위에 업로드 됩니다. Foxfire는 설치된 사용자가 .klay 도메인에 접속하면 Kumiho의 백엔드인 :ref:`Ninetales<Ninetales>` 에서 웹 페이지를 블록체인 상에서 로드할 Webloader를 받아옵니다. Webloader는 현재 접속한 domain을 보고 로드해야 할 HTML을 담고있는 smart contract의 시작 주소를 Ninetales로 부터 받아옵니다.
 
 .. code-block:: solidity
 
@@ -60,6 +63,25 @@ HTML코드는 Reversed Linked List 형태로 Klaytn Blockchain 위에 업로드 
     }
 
 모든 HTML코드가 로드되면 Webloader는 DOM을 조립 후 현재 페이지에 표시합니다.
+
+.. warning::
+    ``Foxfire``, ``Ninetales`` 는 실제 contract상에 올라간 코드를 로드하지 않습니다. 실제 코드는 Foxfire가 Ninetale에서 받아온 Webloader가 로컬에서 로드합니다. 아래와 같은 코드는 동작하지 않습니다.
+
+    .. code-block:: HTML
+    
+        <script src="http://kumiho.klay/script.js">
+        <style href="http://kumiho.klay/style.css">
+    
+    그러므로 web application을 작성할때 Webpack과 같은 도구로 하나의 페이지로 bundling해야 하며 용량이 커지는 것을 막기위해 라이브러리나 이미지들은 CDN을 사용하는 것을 추천합니다.
+
+    Kumiho의 홍보용 Application인 Redistribution_ 의 코드를 참고해 주시기 바랍니다.
+
+    .. _Redistribution: https://github.com/KumihoProject/Redistribution
+
+.. note::
+    위와 같은 이유로 Single Page Application으로 작성하는 것을 권장합니다. 하지만 SPA로 작성 시 애플리케이션의 일부 페이지를 업데이트 해야 할 경우 전체를 다시 업로드 해야하기 때문에 경로를 나누어 업로드 하는 것을 고려할 수 있습니다.
+    
+    예를들어 ``/`` 와 ``/dashboard`` 를 각각의 SPA로 업로드 하는 것입니다.
 
 --------------------------------------------------------------------------
 
