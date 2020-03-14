@@ -8,11 +8,11 @@ Ninetales
 
 
 
-.. _Ninetales-javascript-interface:
+.. .. _Ninetales-javascript-interface:
 
-------------------------------------------------------------------------------
+.. ------------------------------------------------------------------------------
 
-json interface
-=====================
+.. json interface
+.. =====================
 
-something
+.. something

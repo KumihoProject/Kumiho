@@ -16,7 +16,7 @@ Ahri
 
 
 compileSolidity
-=====================
+---------------------
 .. code-block:: javascript
 
     async compileSolidity(solidity, host)
@@ -38,7 +38,7 @@ compileSolidity
 
 
 deployContract
-=====================
+---------------------
 .. code-block:: javascript
 
     async deployContract(abi, bin, args, options = {})
@@ -58,7 +58,7 @@ Contract를 배포합니다.
 
 
 callByUrl
-=====================
+---------------------
 .. code-block:: javascript
 
     async callByUrl(url, method, args, value = 0, options = {})
@@ -96,7 +96,7 @@ Returns
 
 
 callByAddress
-=====================
+---------------------
 .. code-block:: javascript
 
     async callByAddress(address, method, functionName, args, argTypes, resultTypes, value = 0, options = {})
@@ -119,7 +119,7 @@ callByAddress
 
 
 fetch
-=====================
+---------------------
 .. code-block:: javascript
 
     async fetch(url, req = {})
@@ -143,7 +143,7 @@ HTTP Header의 ``Klay-Address`` 에 지갑의 주소를 설정하여 fetch 요�
 
 
 getApiInterface
-=====================
+---------------------
 .. code-block:: javascript
 
     async getApiInterface(url)
