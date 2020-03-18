@@ -19,9 +19,9 @@ compileSolidity
 ---------------------
 .. code-block:: javascript
 
-    async compileSolidity(solidity, host)
+    async compileSolidity(solidity, { version, host })
     
-솔리디티를 컴파일 하는 함수. ``${host}/api/compile`` 로 요청합니다. host의 기본값은 ``https://kumiho.org`` 입니다. ``Solidity.sol`` 로 컴파일 됩니다.
+솔리디티를 컴파일 하는 함수. ``${host}/api/compile`` 로 요청합니다. host의 기본값은 ``https://kumiho.org`` 입니다. version의 기본값은 ``v0.5.6+commit.b259423e``입니다. ``Solidity.sol`` 로 컴파일 됩니다.
 
 .. code-block:: javascript
 
