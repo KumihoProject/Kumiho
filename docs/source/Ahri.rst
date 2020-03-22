@@ -165,3 +165,87 @@ getApiInterface
     //    ]
     //}
  
+------------------------------------------------------------------------------
+
+
+getEvents
+---------------------
+.. code-block:: javascript
+
+    async getEvents(url, fromBlock, toBlock)
+
+해당 Url의 Event들을 가져옵니다.
+
+.. code-block:: javascript
+
+    const events = await Ahri.getEvents('kumiho.klay/redistribution/event/Vote', prevBlockNum + 1, currentBlockNum)
+
+    //[
+    //    {
+    //        "data": [
+    //            "1",
+    //            "0x242BCe82d002DB2De7cE19D5b005E7d534C05321"
+    //        ],
+    //        "blockNumber": 23334472,
+    //        "logIndex": 0
+    //    },
+    //    {
+    //        "data": [
+    //            "2",
+    //            "0x242BCe82d002DB2De7cE19D5b005E7d534C05321"
+    //        ],
+    //       "blockNumber": 23334480,
+    //        "logIndex": 0
+    //    },
+    //    {
+    //        "data": [
+    //            "11",
+    //            "0x242BCe82d002DB2De7cE19D5b005E7d534C05321"
+    //        ],
+    //        "blockNumber": 23334508,
+    //        "logIndex": 0
+    //    }
+    //]
+
+------------------------------------------------------------------------------
+
+
+getRecentEvents
+---------------------
+.. code-block:: javascript
+
+    async getRecentEvents(url, blockCount)
+
+해당 Url의 Event들을 가져옵니다.
+
+.. code-block:: javascript
+
+    const events = await Ahri.getRecentEvents('kumiho.klay/redistribution/event/Vote', 100)
+
+    //[
+    //    {
+    //        "data": [
+    //            "1",
+    //            "0x242BCe82d002DB2De7cE19D5b005E7d534C05321"
+    //        ],
+    //        "blockNumber": 23334472,
+    //        "logIndex": 0
+    //    },
+    //    {
+    //        "data": [
+    //            "2",
+    //            "0x242BCe82d002DB2De7cE19D5b005E7d534C05321"
+    //        ],
+    //       "blockNumber": 23334480,
+    //        "logIndex": 0
+    //    },
+    //    {
+    //        "data": [
+    //            "11",
+    //            "0x242BCe82d002DB2De7cE19D5b005E7d534C05321"
+    //        ],
+    //        "blockNumber": 23334508,
+    //        "logIndex": 0
+    //    }
+    //]
+
