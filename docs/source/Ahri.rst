@@ -72,7 +72,16 @@ Parameters
 1. ``url`` - ``String``: 타겟 Contract와 매핑된 Url
 2. ``method`` - ``'GET'|'POST'``: Target을 호출할 method. pure, view 함수일 경우 ``GET`` 을, 일반적인 함수나 payable일 경우 ``POST`` 를 사용 합니다.
 3. ``args`` - ``Array``: Contract에 넘겨 줄 arguments
-4. ``value`` - ``int``: 지불할 비용(Peb). ``method`` 가 ``GET`` 일때는 무시됩니다.
+4. ``value`` - ``int``: 지불할 비용(Peb). ``method`` 가 ``GET`` 일때는 무시됩니다. default: 0
+5. ``options``
+
+----------
+Options
+----------
+
+1. ``gas`` - ``int``: gas 제한. default: 1500000
+2. ``gasPrice`` - ``int``: gas price. default: caver default
+3. ``anonymous`` - ``Boolean``: (v1.0.1) Method가 GET이고 anonymous가 true일경우 호출시 msg.sender를 ``0x0000000000000000000000000000000000000000`` 로 설정. Kaikas에 접근 권한을 묻지 않는다.
 
 ----------
 Returns
@@ -102,6 +111,27 @@ callByAddress
     async callByAddress(address, method, functionName, args, argTypes, resultTypes, value = 0, options = {})
 
 ``callByAddress`` 은 해당 address를 가진 Smart Contract를 호출하는 함수입니다. ``POST`` 일 경우 리턴값은 없습니다.
+
+----------
+Parameters
+----------
+
+1. ``address`` - ``Address``: 타겟 Contract의 주소
+2. ``method`` - ``'GET'|'POST'``: Target을 호출할 method. pure, view 함수일 경우 ``GET`` 을, 일반적인 함수나 payable일 경우 ``POST`` 를 사용 합니다.
+3. ``functionName`` - ``string``: 호출할 함수 이름
+4. ``args`` - ``Array``: Contract에 넘겨 줄 arguments
+5. ``argTypes`` - ``Array<Type>``: Contract에 넘겨 줄 arguments의 Types ex: ``['uint256', 'string', 'address']``
+6. ``resultTypes`` - ``Array<Type>``: returns의 Types ex: ``['uint256', 'string', 'address']``
+7. ``value`` - ``int``: 지불할 비용(Peb). ``method`` 가 ``GET`` 일때는 무시됩니다. dafult: 0
+8. ``options``
+
+----------
+Options
+----------
+
+1. ``gas`` - ``int``: gas 제한. default: 1500000
+2. ``gasPrice`` - ``int``: gas price. default: caver default
+3. ``anonymous`` - ``Boolean``: (v1.0.1) Method가 GET이고 anonymous가 true일경우 호출시 msg.sender를 ``0x0000000000000000000000000000000000000000`` 로 설정. Kaikas에 접근 권한을 묻지 않는다.
 
 .. code-block:: javascript
 
