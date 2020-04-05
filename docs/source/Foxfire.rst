@@ -11,5 +11,5 @@ Foxfire
 - Chrome_
 - Firefox_
 
-.. _Chrome: https://chrome.google.com/webstore/category/extensions
-.. _Firefox: https://addons.mozilla.org/ko/firefox/extensions/
+.. _Chrome: https://chrome.google.com/webstore/detail/foxfire/pccgbfogagfobhemhlibegioklnkihgk
+.. _Firefox: https://addons.mozilla.org/ko/firefox/addon/kumiho/
