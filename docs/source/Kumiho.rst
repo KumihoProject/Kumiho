@@ -15,13 +15,13 @@ Kumiho는 Chrome, Firefox를 지원하며 Browser Extension을 설치하면 사�
 .. note::
     Kumiho는 :ref:`Foxfire<Foxfire>` Extension과 Kaikas 지갑이 설치되어있어야 동작합니다.
 
-새로운 웹 애플리케이션을 배포하고 싶다면 http://kumiho.klay/enroll_domain 에서 도메인을 등록 후 가능합니다.
+새로운 웹 애플리케이션을 배포하고 싶다면 http://kumiho.klay/buy_domain 에서 도메인을 등록 후 가능합니다.
 
 ------------------------------------------------------------------------------
 
 Deploy Web Application
 =============
-1. http://kumiho.klay/enroll_domain 에서 원하는 도메인을 구입합니다. sub 도메인은 현재 지원하지 않으며 .klay로 끝나야 합니다.
+1. http://kumiho.klay/buy_domain 에서 원하는 도메인을 구입합니다. sub 도메인은 현재 지원하지 않으며 .klay로 끝나야 합니다.
 2. 도메인을 구입 후 http://kumiho.klay/dashboard 에서 현재 Kaikas의 계정으로 등록된 도메인을 관리할 수 있습니다.
 3. 도메인 관리 페이지에서 + Add Web Page를 선택하여 Path에 웹페이지를 등록하거나 + Add Api를 선택하여 Path에 solidity 함수를 등록 할 수 있습니다.
 
